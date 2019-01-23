@@ -13,17 +13,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-import okhttp3.ws.WebSocket;
-import okhttp3.ws.WebSocketCall;
-import okhttp3.ws.WebSocketListener;
-import okio.Buffer;
+import expolib_v1.okhttp3.OkHttpClient;
+import expolib_v1.okhttp3.Request;
+import expolib_v1.okhttp3.RequestBody;
+import expolib_v1.okhttp3.Response;
+import expolib_v1.okhttp3.ResponseBody;
+import expolib_v1.okhttp3.ws.WebSocket;
+import expolib_v1.okhttp3.ws.WebSocketCall;
+import expolib_v1.okhttp3.ws.WebSocketListener;
+import expolib_v1.okio.Buffer;
 
-import static okhttp3.ws.WebSocket.TEXT;
+import static expolib_v1.okhttp3.ws.WebSocket.TEXT;
 
 /**
  * Created by rotemm on 27/12/2016.

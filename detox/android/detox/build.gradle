@@ -9,8 +9,7 @@ def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 2
 
 android {
     compileSdkVersion _compileSdkVersion
-    buildToolsVersion _buildToolsVersion
-    defaultConfig {
+  defaultConfig {
         minSdkVersion _minSdkVersion
         targetSdkVersion _targetSdkVersion
         versionCode 1
@@ -61,14 +60,15 @@ android {
     lintOptions {
         abortOnError false
     }
+  buildToolsVersion '28.0.3'
 }
 
 dependencies {
-    minReactNative44Implementation 'com.squareup.okhttp3:okhttp:3.4.1'
-    minReactNative44Implementation 'com.squareup.okhttp3:okhttp-ws:3.4.1'
+    minReactNative44Implementation 'expolib_v1.com.squareup.okhttp3:okhttp:3.4.1'
+    minReactNative44Implementation 'expolib_v1.com.squareup.okhttp3:okhttp-ws:3.4.1'
 
-    minReactNative46Implementation 'com.squareup.okhttp3:okhttp:3.6.0'
-    minReactNative46Implementation 'com.squareup.okio:okio:1.13.0'
+    minReactNative46Implementation 'expolib_v1.com.squareup.okhttp3:okhttp:3.6.0'
+    minReactNative46Implementation 'expolib_v1.com.squareup.okio:okio:1.13.0'
 
     implementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.google.code.findbugs'

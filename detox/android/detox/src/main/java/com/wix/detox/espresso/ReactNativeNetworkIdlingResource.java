@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import okhttp3.Call;
-import okhttp3.Dispatcher;
+import expolib_v1.okhttp3.Call;
+import expolib_v1.okhttp3.Dispatcher;
 
 /**
  * Created by simonracz on 09/10/2017.
