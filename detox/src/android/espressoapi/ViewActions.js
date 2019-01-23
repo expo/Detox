@@ -12,13 +12,13 @@ function sanitize_matcher(matcher) {
 
   const originalMatcher = typeof matcher._call === 'function' ? matcher._call() : matcher._call;
   return originalMatcher.type ? originalMatcher.value : originalMatcher;
-} 
+}
 class ViewActions {
   static clearGlobalAssertions() {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "clearGlobalAssertions",
       args: []
@@ -29,7 +29,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "actionWithAssertions",
       args: [viewAction]
@@ -40,7 +40,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "clearText",
       args: []
@@ -52,7 +52,7 @@ class ViewActions {
       return {
         target: {
           type: "Class",
-          value: "android.support.test.espresso.action.ViewActions"
+          value: "androidx.test.espresso.action.ViewActions"
         },
         method: "click",
         args: []
@@ -63,7 +63,7 @@ class ViewActions {
       return {
         target: {
           type: "Class",
-          value: "android.support.test.espresso.action.ViewActions"
+          value: "androidx.test.espresso.action.ViewActions"
         },
         method: "click",
         args: [rollbackAction]
@@ -83,7 +83,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "swipeLeft",
       args: []
@@ -94,7 +94,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "swipeRight",
       args: []
@@ -105,7 +105,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "swipeDown",
       args: []
@@ -116,7 +116,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "swipeUp",
       args: []
@@ -127,7 +127,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "closeSoftKeyboard",
       args: []
@@ -138,7 +138,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "pressImeActionButton",
       args: []
@@ -149,7 +149,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "pressBack",
       args: []
@@ -160,7 +160,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "pressMenuKey",
       args: []
@@ -172,7 +172,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "pressKey",
       args: [{
@@ -186,7 +186,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "doubleClick",
       args: []
@@ -197,7 +197,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "longClick",
       args: []
@@ -208,7 +208,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "scrollTo",
       args: []
@@ -220,7 +220,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "typeTextIntoFocusedView",
       args: [stringToBeTyped]
@@ -232,7 +232,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "typeText",
       args: [stringToBeTyped]
@@ -244,7 +244,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "replaceText",
       args: [stringToBeSet]
@@ -256,7 +256,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "openLinkWithText",
       args: [linkText]
@@ -268,7 +268,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "openLinkWithUri",
       args: [uri]
@@ -280,7 +280,7 @@ class ViewActions {
     return {
       target: {
         type: "Class",
-        value: "android.support.test.espresso.action.ViewActions"
+        value: "androidx.test.espresso.action.ViewActions"
       },
       method: "repeatedlyUntil",
       args: [action, {

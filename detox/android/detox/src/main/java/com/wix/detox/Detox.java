@@ -9,12 +9,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.support.annotation.NonNull;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
+import androidx.test.platform.app.InstrumentationRegistry;
+
+import androidx.test.rule.ActivityTestRule;
 
 /**
  * <p>Static class.</p>
@@ -90,7 +91,7 @@ public final class Detox {
      * @param activityTestRule the activityTestRule
      */
     public static void runTests(ActivityTestRule activityTestRule) {
-        Context appContext = InstrumentationRegistry.getTargetContext().getApplicationContext();
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext().getApplicationContext();
         runTests(activityTestRule, appContext);
     }
 
@@ -173,7 +174,7 @@ public final class Detox {
     // TODO: Can't get to launch the app back to previous instance using only intents from inside instrumentation (not sure why).
     // this is a (hopefully) temp solution. Should use intents instead.
     public static void launchMainActivity() throws RemoteException, UiObjectNotFoundException {
-        final Context targetContext = InstrumentationRegistry.getTargetContext();
+        final Context targetContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
 //        Intent intent = targetContext.getPackageManager().getLaunchIntentForPackage(targetContext.getPackageName());
 //        intent.setPackage(null);
@@ -207,7 +208,7 @@ public final class Detox {
         // If this is removed, Android's activity disambiguity bottom-selection dialog will show, prompting for a user selection,
         // instead of 'just launching'.
         if (sActivityTestRule.getActivity() != null) {
-            intent.setClass(InstrumentationRegistry.getTargetContext(), sActivityTestRule.getActivity().getClass());
+            intent.setClass(InstrumentationRegistry.getInstrumentation().getTargetContext(), sActivityTestRule.getActivity().getClass());
         }
         return intent;
     }

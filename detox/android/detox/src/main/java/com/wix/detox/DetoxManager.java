@@ -1,14 +1,10 @@
 package com.wix.detox;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.Espresso;
-import android.support.test.espresso.IdlingResource;
 import android.util.Log;
 
 import com.wix.detox.espresso.UiAutomatorHelper;
@@ -25,6 +21,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.IdlingResource;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 
 /**
@@ -186,7 +186,7 @@ class DetoxManager implements WebSocketClient.ActionHandler {
         // 1. we want to use postAtFrontOfQueue()
         // 2. we want it to be synchronous
         final ArrayList<IdlingResource> busyResources = new ArrayList<>();
-        Handler handler = new Handler(InstrumentationRegistry.getTargetContext().getMainLooper());
+        Handler handler = new Handler(InstrumentationRegistry.getInstrumentation().getTargetContext().getMainLooper());
         SyncRunnable sr = new SyncRunnable(new Runnable() {
             @Override
             public void run() {

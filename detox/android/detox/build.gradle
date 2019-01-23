@@ -75,11 +75,10 @@ dependencies {
     minReactNative46Implementation 'com.squareup.okhttp3:okhttp:3.6.0'
     minReactNative46Implementation 'com.squareup.okio:okio:1.13.0'
 
-    implementation('com.android.support.test.espresso:espresso-core:3.0.2', {
-        exclude group: 'com.google.code.findbugs'
-    })
-    implementation 'com.android.support.test:runner:1.0.2'
-    implementation 'com.android.support.test:rules:1.0.2'
+    api 'androidx.test.espresso:espresso-core:3.1.1'
+    api 'androidx.test:runner:1.1.1'
+    api 'androidx.test:rules:1.1.1'
+    api 'androidx.test.ext:junit:1.1.0'
 
     // noinspection GradleDynamicVersion
     compileOnly "com.facebook.react:react-native:+"
