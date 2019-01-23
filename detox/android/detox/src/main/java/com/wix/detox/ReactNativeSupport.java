@@ -60,7 +60,7 @@ public class ReactNativeSupport {
      * @return Returns the instanceManager as an Object or null
      */
     public static ReactInstanceManager getInstanceManager(@NonNull Context context) {
-        return ((ReactApplication) context).getReactNativeHost().getReactInstanceManager();
+        return Reflect.on("host.exp.exponent.kernel.KernelProvider").call("getInstance").call("getReactInstanceManager").get();
     }
 
     /**
