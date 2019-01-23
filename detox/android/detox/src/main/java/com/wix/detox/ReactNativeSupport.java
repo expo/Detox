@@ -129,26 +129,7 @@ public class ReactNativeSupport {
 
     }
 
-    /**
-     * <p>
-     * Waits for a ReactContext to be created. Can be called any time.
-     * </p>
-     * @param reactNativeHostHolder the object that has a getReactNativeHost() method
-     */
-    static void waitForReactNativeLoad(@NonNull Context reactNativeHostHolder) {
-
-        if (!isReactNativeApp()) {
-            return;
-        }
-
-        int maxSeconds = 60;
-        awaitInstanceManager(maxSeconds, reactNativeHostHolder);
-
-        final ReactInstanceManager instanceManager = getInstanceManager(reactNativeHostHolder);
-        if (instanceManager == null) {
-            throw new RuntimeException("ReactInstanceManager is null");
-        }
-
+    private static void awaitReactContext(int maxSeconds, final ReactInstanceManager instanceManager){
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         InstrumentationRegistry.getInstrumentation().runOnMainSync(
                 new Runnable() {
@@ -177,7 +158,7 @@ public class ReactNativeSupport {
             try {
                 if (!countDownLatch.await(1, TimeUnit.SECONDS)) {
                     i++;
-                    if (i >= 60) {
+                    if (i >= maxSeconds) {
                         // First load can take a lot of time. (packager)
                         // Loads afterwards should take less than a second.
                         throw new RuntimeException("waited a minute for the new reactContext");
@@ -197,7 +178,29 @@ public class ReactNativeSupport {
                 throw new RuntimeException("waiting for reactContext got interrupted", e);
             }
         }
+    }
 
+    /**
+     * <p>
+     * Waits for a ReactContext to be created. Can be called any time.
+     * </p>
+     * @param reactNativeHostHolder the object that has a getReactNativeHost() method
+     */
+    static void waitForReactNativeLoad(@NonNull Context reactNativeHostHolder) {
+
+        if (!isReactNativeApp()) {
+            return;
+        }
+
+        int maxSeconds = 60;
+        awaitInstanceManager(maxSeconds, reactNativeHostHolder);
+
+        ReactInstanceManager instanceManager = getInstanceManager(reactNativeHostHolder);
+        if (instanceManager == null) {
+            throw new RuntimeException("ReactInstanceManager is null");
+        }
+
+        awaitReactContext(maxSeconds, instanceManager);
         currentReactContext = instanceManager.getCurrentReactContext();
         setupEspressoIdlingResources(currentReactContext);
     }
